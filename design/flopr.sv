@@ -22,12 +22,16 @@
 
 module flopr#
     (parameter WIDTH = 32)
-    (input logic clk, reset,
+    (input logic clk, reset, stall,
      input logic [WIDTH-1:0] d,
      output logic [WIDTH-1:0] q);
 
 always_ff @(posedge clk, posedge reset)
-    if (reset) q <= 0;
-    else q <= d;
+    if (reset) 
+        q <= 0;
+    else if(stall == 0)
+        q <= d;
+    else
+        q <= q;
     
 endmodule

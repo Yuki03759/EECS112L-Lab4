@@ -41,6 +41,8 @@ module Datapath #(
     output logic [DATA_W-1:0] WB_Data //ALU_Result
     );
 
+`include "structs.sv"
+
 logic [PC_W-1:0] PC, PCPlus4;
 logic [INS_W-1:0] Instr;
 logic [DATA_W-1:0] Result;
@@ -54,45 +56,186 @@ logic [31:0] brresult;
 logic [31:0] srcAPlusImm;
 logic [31:0] rmuxresult;
 logic [31:0] jmuxresult;
+logic [31:0] SrcA_toForwardMux, SrcB_toForwardMux;
+logic [1:0] ForwardA, ForwardB;
+logic stall;
+
+//initialization
+if_id_t if_id;
+id_ex_t id_ex;
+ex_mem_t ex_mem;
+mem_wb_t mem_wb;
+
+//if_id
+always @(posedge clk) begin
+    if(reset)
+        begin
+            if_id.pc        <= 0;
+            if_id.pcplus4   <= 0;
+            if_id.instr     <= 0;
+        end
+    else if (!stall)
+        begin
+            if_id.pc        <= PC;
+            if_id.pcplus4   <= PCPlus4;
+            if_id.instr     <= Instr;
+        end
+end
+
+//id_ex
+always @(posedge clk) begin
+    if(reset || stall)
+        begin
+            id_ex.alusrc        <= 0;
+            id_ex.memtoreg      <= 0;  
+            id_ex.regwrite      <= 0;
+            id_ex.memread       <= 0; 
+            id_ex.memwrite      <= 0;
+            id_ex.branch        <= 0;
+            
+            id_ex.funct3        <= 0;
+            id_ex.alu_cc        <= 0;
+            id_ex.jumpmux       <= 0;
+            id_ex.jumprmux      <= 0;
+            id_ex.umux          <= 0;
+            
+            id_ex.regwriteaddress <= 0;
+            id_ex.readdata1     <= 0;
+            id_ex.readdata2     <= 0;
+            id_ex.readaddr1       <= 0;
+            id_ex.readaddr2       <= 0;
+            id_ex.ext_imm       <= 0;
+            
+            id_ex.pc            <=  0;
+            id_ex.pcplus4       <=  0;
+        end
+    else
+        begin
+            id_ex.alusrc    <= ALUsrc;
+            id_ex.memtoreg  <= MemtoReg; 
+            id_ex.regwrite  <= RegWrite;
+            id_ex.memread   <= MemRead; 
+            id_ex.memwrite  <= MemWrite;
+            id_ex.branch    <= Branch;
+            
+            id_ex.funct3    <= Funct3;
+            id_ex.alu_cc    <= ALU_CC;
+            id_ex.jumpmux   <= JumpMux;
+            id_ex.jumprmux  <= JumpRMux;
+            id_ex.umux      <= Umux;
+            
+            id_ex.regwriteaddress   <= if_id.instr[11:7];
+            id_ex.readaddr1         <= if_id.instr[19:15];
+            id_ex.readaddr2         <= if_id.instr[24:20];
+            id_ex.readdata1         <= Reg1;
+            id_ex.readdata2         <= Reg2;
+            id_ex.ext_imm           <= ExtImm; 
+            
+            id_ex.pc                <=  if_id.pc;
+            id_ex.pcplus4           <=  if_id.pcplus4;
+            
+        end
+end
+
+//ex_mem
+always @(posedge clk) begin
+    if(reset)
+        begin
+            ex_mem.memtoreg     <= 0;  
+            ex_mem.regwrite     <= 0;
+            ex_mem.memread      <= 0; 
+            ex_mem.memwrite     <= 0; 
+            
+            ex_mem.regwriteaddress  <= 0;
+            ex_mem.aluresult    <= 0;
+            ex_mem.readdata2        <= 0;
+            ex_mem.funct3       <= 0;
+            ex_mem.pcplus4      <= 0;
+            
+        end
+    else
+        begin
+            ex_mem.memtoreg         <= id_ex.memtoreg;  
+            ex_mem.regwrite         <= id_ex.regwrite;
+            ex_mem.memread          <= id_ex.memread; 
+            ex_mem.memwrite         <= id_ex.memwrite;
+            
+            ex_mem.regwriteaddress  <= id_ex.regwriteaddress;
+            ex_mem.aluresult        <= ALUResult;
+            ex_mem.readdata2        <= id_ex.readdata2;
+            ex_mem.funct3           <= id_ex.funct3;
+            ex_mem.pcplus4          <= id_ex.pcplus4;
+            
+        end
+end
+
+//mem_wb
+always @(posedge clk) begin
+    if(reset)
+        begin
+            mem_wb.memtoreg         <= 0;
+            mem_wb.regwrite         <= 0;
+        
+            mem_wb.regwriteaddress  <= 0;
+            mem_wb.aluresult           <= 0;
+            mem_wb.pcplus4          <= 0;
+            mem_wb.readdata        <= 0;
+        end
+    else
+        begin
+            mem_wb.memtoreg         <= ex_mem.memtoreg;
+            mem_wb.regwrite         <= ex_mem.regwrite;
+            
+            mem_wb.regwriteaddress  <= ex_mem.regwriteaddress;
+            mem_wb.aluresult        <= ex_mem.aluresult;
+            mem_wb.pcplus4          <= ex_mem.pcplus4;
+            mem_wb.readdata         <= ReadData;
+        end
+end
+
+// ------------------------------------------//
+//              Module                       //
+// ------------------------------------------//
 
 
-// next PC
     adder #(32) pcadd (PC, 32'b100, PCPlus4);
-    flopr #(32) pcreg(clk, reset, jmuxresult, PC);
-
- //Instruction memory
+    flopr #(32) pcreg(clk, reset, stall, jmuxresult, PC);
     instructionmemory instr_mem (PC, Instr);
     
-    assign opcode = Instr[6:0];
-    assign Funct7 = Instr[31:25];
-    assign Funct3 = Instr[14:12];
-      
-// //Register File
-    RegFile rf(clk, reset, RegWrite, Instr[11:7], Instr[19:15], Instr[24:20],
+// ------------- IF_ID -----------------------------------    
+
+    assign opcode = if_id.instr[6:0];
+    assign Funct7 = if_id.instr[31:25];
+    assign Funct3 = if_id.instr[14:12];
+    
+    hazard_Detection_Unit hu (if_id.instr[19:15], if_id.instr[24:20], id_ex.regwriteaddress, id_ex.memread, stall); 
+     
+    RegFile rf(clk, reset, mem_wb.regwrite, mem_wb.regwriteaddress, if_id.instr[19:15], if_id.instr[24:20],
             Result, Reg1, Reg2);
     
-    mux2 #(32) umux(Reg1, PC, Umux, SrcA);
-    //mux2 #(32) resmux(ALUResult, ReadData, MemtoReg, Result);
-           
-//// sign extend
-    imm_Gen Ext_Imm (Instr,ExtImm);
+    imm_Gen Ext_Imm (if_id.instr, ExtImm);
 
-//// ALU
-    mux2 #(32) srcbmux(Reg2, ExtImm, ALUsrc, SrcB);
-    alu alu_module(SrcA, SrcB, ALU_CC, ALUResult);
+// ------------- IF_ID -----------------------------------    
+
+    mux2 #(32) umux(id_ex.readdata1, id_ex.pc, id_ex.umux, SrcA_toForwardMux);
+    mux2 #(32) srcbmux(id_ex.readdata2, id_ex.ext_imm, id_ex.alusrc, SrcB_toForwardMux);
+    alu alu_module(SrcA, SrcB, id_ex.alu_cc, ALUResult);
+    
+    branch_flag bf(id_ex.funct3, SrcA, SrcB, id_ex.branch , bmux);
+    adder #(32) bradder(id_ex.pc , id_ex.ext_imm, PCPlusImm);
+    adder #(32) brmuxPlusImm(.a(id_ex.ext_imm), .b(SrcA), .y(srcAPlusImm));
+    mux3 #(32) jumpmux ( id_ex.pcplus4, srcAPlusImm, PCPlusImm, {bmux || id_ex.jumpmux ,  id_ex.jumprmux}, jmuxresult);
+    
+    mux3 #(32) forwardA_Mux( SrcA_toForwardMux, Result, ex_mem.aluresult, ForwardA, SrcA);
+    mux3 #(32) forwardB_Mux( SrcB_toForwardMux, Result, ex_mem.aluresult, ForwardB, SrcB);
+
+    
+    forwarding_Unit fu( id_ex.readaddr1, id_ex.readaddr2, mem_wb.regwriteaddress , ex_mem.regwriteaddress, id_ex.umux, id_ex.alusrc, mem_wb.regwrite ,ex_mem.regwrite , ForwardA, ForwardB);
+// ----------- EX_Mem ----------------------------------       
     
     assign WB_Data = Result;
+	datamemory data_mem (clk, ex_mem.memread, ex_mem.memwrite, ex_mem.aluresult[DM_ADDRESS-1:0], ex_mem.readdata2, ex_mem.funct3 , ReadData);
 
-///// brmux
-    branch_flag bf(Funct3, SrcA, SrcB, Branch, bmux);
-    
-    adder #(32) bradder(PC, ExtImm, PCPlusImm);
-    adder #(32) brmuxPlusImm(.a(ExtImm), .b(SrcA), .y(srcAPlusImm));
-    
-    mux3 #(32) jumpmux ( PCPlus4, srcAPlusImm, PCPlusImm, {bmux || JumpMux ,  JumpRMux}, jmuxresult);
-    
-////// Data memory 
-	datamemory data_mem (clk, MemRead, MemWrite, ALUResult[DM_ADDRESS-1:0], Reg2, Funct3, ReadData);
-    //mux2 #(32) pcmux(Result, PCPlus4, PCMux, pcm);
-    mux3 #(32) resmux(ALUResult, PCPlus4, ReadData, MemtoReg, Result); 
+// --------- MEM_WB -----------------------------------    
+    mux3 #(32) resmux(mem_wb.aluresult, mem_wb.pcplus4 , mem_wb.readdata, mem_wb.memtoreg, Result); 
 endmodule
