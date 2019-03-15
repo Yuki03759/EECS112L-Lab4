@@ -1,0 +1,13 @@
+1. 32'h02a02823;//      sw  48(r0)<- r10        ALUResult = h30 
+ line 30
+ result is not correct
+ 
+2. 32'h4026d793;//     srai r15, r13, 2h          ALUResult = hfffffffc = r15
+ line 51
+ not sure
+ 
+3. 32'hccccc817;//     auipc r16, hccccc          ALUResult = hccccc0b6
+ line 58 auipc
+  result is not correct
+  
+  general load and save

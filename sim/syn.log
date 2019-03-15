@@ -1,0 +1,40 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+          Version J-2014.09-SP4 for RHEL64 -- Mar 04, 2015
+               Copyright (c) 1988-2015 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+Initializing gui preferences from file  /users/ugrad/2017/summer/yukih1/.synopsys_dv_prefs.tcl
+Error: could not open script file "/users/ugrad/2017/summer/yukih1/112L/project/EECS112L_Lab3/Lab_Files/sim/synth.tcl" (CMD-015)
+dc_shell> design_vision &
+Error: unknown command 'design_vision' (CMD-005)
+dc_shell> design_vision &&[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+dc_shell> 
+dc_shell> 
+dc_shell> 
+dc_shell> 
+dc_shell> fc[K[Kdc_shell-t -gui
+Error: unknown command 'dc_shell-t' (CMD-005)
+dc_shell> dc_shell-t -gui
+Error: unknown command 'dc_shell-t' (CMD-005)
+dc_shell> dc_shell-t -gui[P [P [P [P [P [P [P [P [P [P  - -gu
+Error: unknown option '-gui' (CMD-010)
+Error: unknown command '-gui' (CMD-005)
+dc_shell> dc_shell-t -guiu

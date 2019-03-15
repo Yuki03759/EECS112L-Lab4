@@ -1,0 +1,3 @@
+vsim -64 -gui -view waveform.wlf
+
+

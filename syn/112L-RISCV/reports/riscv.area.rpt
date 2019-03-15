@@ -1,0 +1,81 @@
+Warning: duplicate option '-nosplit' overrides previous value. (CMD-018)
+Warning: Design 'riscv' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : area
+Design : riscv
+Version: J-2014.09-SP4
+Date   : Fri Mar  1 03:02:43 2019
+****************************************
+
+Library(s) Used:
+
+    saed32lvt_tt1p05vn40c (File: /users/ugrad2/2012/spring/pooriam/libraries/saed32lvt_tt1p05vn40c.db)
+    saed32sram_tt1p05vn40c (File: /users/ugrad2/2012/spring/pooriam/libraries/saed32sram_tt1p05vn40c.db)
+
+Number of ports:                           34
+Number of nets:                            94
+Number of cells:                           41
+Number of combinational cells:             40
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                         10
+Number of references:                      17
+
+Combinational area:              10349.506126
+Buf/Inv area:                      724.310403
+Noncombinational area:            6994.043106
+Macro/Black Box area:            50667.683594
+Net Interconnect area:            6807.302180
+
+Total cell area:                 68011.232826
+Total area:                      74818.535006
+
+Information: This design contains black box (unknown) components. (RPT-8)
+
+The above information was reported from the logical library. The following are from the physical library:
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area              Local cell area
+                                  -------------------  --------------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes       Design
+--------------------------------  ----------  -------  ----------  ---------  ----------  ---------------
+riscv                             68011.2328    100.0     82.8509     0.0000      0.0000  riscv
+dp                                67928.3819     99.9    240.4202     0.0000      0.0000  Datapath
+dp/Ext_Imm                          123.2598      0.2    123.2598     0.0000      0.0000  imm_Gen
+dp/alu_module                      2222.7434      3.3   2222.7434     0.0000      0.0000  alu
+dp/bradder                          158.8400      0.2    158.8400     0.0000      0.0000  adder_WIDTH32_2
+dp/brmux                             84.6300      0.1     84.6300     0.0000      0.0000  mux2_WIDTH32_1
+dp/brmuxPlus4                       158.8400      0.2    158.8400     0.0000      0.0000  adder_WIDTH32_1
+dp/data_mem                       50668.9543     74.5      1.2707     0.0000  50667.6836  datamemory
+dp/pcadd                            148.1659      0.2    148.1659     0.0000      0.0000  adder_WIDTH32_0
+dp/pcreg                            230.7628      0.3      3.0497   227.7130      0.0000  flopr_WIDTH32
+dp/rf                             13716.9144     20.2   6950.5843  6766.3301      0.0000  RegFile
+dp/srcbmux                           87.6797      0.1     87.6797     0.0000      0.0000  mux2_WIDTH32_2
+dp/umux                              87.1714      0.1     87.1714     0.0000      0.0000  mux2_WIDTH32_0
+--------------------------------  ----------  -------  ----------  ---------  ----------  ---------------
+Total                                                  10349.5061  6994.0431  50667.6836
+
+
+Area of detected synthetic parts
+--------------------------------
+  No DW parts to report!
+
+Estimated area of ungrouped synthetic parts
+-------------------------------------------
+                             Estimated  Perc. of
+  Module     Implem.  Count       Area cell area
+  ---------- -------  ----- ---------- ---------
+  DW01_add   apparch      4   605.6410      0.9%
+  DW01_sub   apparch      1   195.1826      0.3%
+  DW_leftsh     astr      1   536.7517      0.8%
+  DW_rightsh    astr      2   972.6093      1.4%
+  ---------- -------  ----- ---------- ---------
+  Total:                  8  2310.1846      3.4%
+
+Total synthetic cell area:              2310.1846  3.4%  (estimated)
+
+1
