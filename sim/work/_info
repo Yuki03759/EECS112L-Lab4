@@ -10,28 +10,28 @@ cModel Technology
 d/users/ugrad/2017/summer/yukih1/112L/project/EECS112L_Lab3/Lab_Files/sim
 vadder
 Z0 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
-Z1 !s110 1552646314
+Z1 !s110 1552877144
 !i10b 1
-!s100 Ml0_Qc4MK04jIMA9iSEWa3
-I7;TRl@dl[<WA@zU_K^2Kk3
+!s100 ke6n_VGU>1B9a2M99WRP01
+IKS<^W9g6ZEhN5l;9Y[@Vn0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 !s105 adder_sv_unit
 S1
 Z3 d/users/ugrad/2017/summer/yukih1/112L/project/newLab4/sim
-Z4 w1552641439
+w1552875402
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/adder.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/adder.sv
 L0 3
-Z5 OL;L;10.4c;61
+Z4 OL;L;10.4c;61
 r1
 !s85 0
 31
-Z6 !s108 1552646314.000000
-Z7 !s107 /users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/structs.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/hazard_Detection_Unit.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/branch_flag.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/RISC_V.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Datapath.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Controller.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/RegFile.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/alu.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/ALUController.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/instructionmemory.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/datamemory.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/forwarding_Unit.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/mux3.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/mux2.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/imm_Gen.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/flopr.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/adder.sv|
-Z8 !s90 -quiet|-64|-sv|-f|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/rtl.cfg|+define+__SIM__|
+Z5 !s108 1552877144.000000
+Z6 !s107 /users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/structs.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/hazard_Detection_Unit.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/branch_flag.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/RISC_V.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Datapath.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Controller.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/RegFile.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/alu.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/ALUController.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/instructionmemory.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/datamemory.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/forwarding_Unit.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/mux3.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/mux2.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/imm_Gen.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/flopr.sv|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/adder.sv|
+Z7 !s90 -quiet|-64|-sv|-f|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/rtl.cfg|+define+__SIM__|
 !i113 0
-Z9 o-quiet -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z10 !s92 -quiet -sv +define+__SIM__ -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 o-quiet -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 !s92 -quiet -sv +define+__SIM__ -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 valu
 R0
 R1
@@ -42,20 +42,20 @@ R2
 !s105 alu_sv_unit
 S1
 R3
-R4
+Z10 w1552641439
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/alu.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/alu.sv
 Z11 L0 23
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 vALUController
 R0
 R1
@@ -66,20 +66,20 @@ R2
 !s105 ALUController_sv_unit
 S1
 R3
-R4
+R10
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/ALUController.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/ALUController.sv
 R11
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 n@a@l@u@controller
 vbranch_flag
 R0
@@ -91,20 +91,20 @@ R2
 !s105 branch_flag_sv_unit
 S1
 R3
-R4
+R10
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/branch_flag.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/branch_flag.sv
 L0 3
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 vController
 R0
 R1
@@ -115,20 +115,20 @@ R2
 !s105 Controller_sv_unit
 S1
 R3
-R4
+R10
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Controller.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Controller.sv
 Z12 L0 22
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 n@controller
 vdatamemory
 R0
@@ -140,70 +140,70 @@ R2
 !s105 datamemory_sv_unit
 S1
 R3
-R4
+R10
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/datamemory.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/datamemory.sv
 L0 3
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 vDatapath
 R0
 R1
 !i10b 1
-!s100 ETW4Tb@>gaKZR>lfI7BT_0
-IMLUGBgHIJcmko@jhG`cE=3
+!s100 a@DkLP@N]c8RY@nloGzD^0
+IBD;bHI]P7dI6`iD[9210d3
 R2
 !s105 Datapath_sv_unit
 S1
 R3
-w1552646303
+w1552876827
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Datapath.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Datapath.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/structs.sv
 R12
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 n@datapath
 vflopr
 R0
 R1
 !i10b 1
-!s100 kh2U?z=A?iDCQzDddhEk13
-Ik:C;Je;f6e>Y6IEkSX98N3
+!s100 Oaj[mZangj`RLKQi=KlbJ0
+IiBl2HM><CUhaBQf7G568Y2
 R2
 !s105 flopr_sv_unit
 S1
 R3
-w1552644554
+w1552877094
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/flopr.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/flopr.sv
 R11
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 vforwarding_Unit
 R0
 R1
@@ -218,20 +218,20 @@ w1552641745
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/forwarding_Unit.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/forwarding_Unit.sv
 R12
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 nforwarding_@unit
 vhazard_Detection_Unit
 R0
-R1
+Z13 !s110 1552877145
 !i10b 1
 !s100 MO6jCef2@RLZAMbC^>NGU2
 Il<jF`XhXKXz^]=ER@`14O3
@@ -243,16 +243,16 @@ w1552646252
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/hazard_Detection_Unit.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/hazard_Detection_Unit.sv
 R12
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 nhazard_@detection_@unit
 vimm_Gen
 R0
@@ -264,45 +264,45 @@ R2
 !s105 imm_Gen_sv_unit
 S1
 R3
-R4
+R10
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/imm_Gen.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/imm_Gen.sv
 R11
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 nimm_@gen
 vinstructionmemory
 R0
 R1
 !i10b 1
-!s100 3O=de7T1i_FE@ez0in_aB0
-IPlPT4A08f=F=_>F=0Dc?A1
+!s100 U_Ze;`;U^QK>EPoe0Jzie0
+IJa6jJgVc^5A]1dI@nl2M62
 R2
 !s105 instructionmemory_sv_unit
 S1
 R3
-R4
+w1552875039
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/instructionmemory.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/instructionmemory.sv
 R11
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 vmux2
 R0
 R1
@@ -313,20 +313,20 @@ R2
 !s105 mux2_sv_unit
 S1
 R3
-R4
+R10
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/mux2.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/mux2.sv
 R11
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 vmux3
 R0
 R1
@@ -337,20 +337,20 @@ R2
 !s105 mux3_sv_unit
 S1
 R3
-R4
+R10
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/mux3.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/mux3.sv
 R11
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 vRegFile
 R0
 R1
@@ -361,20 +361,20 @@ R2
 !s105 RegFile_sv_unit
 S1
 R3
-R4
+R10
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/RegFile.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/RegFile.sv
 L0 3
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 n@reg@file
 vriscv
 R0
@@ -386,23 +386,23 @@ R2
 !s105 RISC_V_sv_unit
 S1
 R3
-R4
+R10
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/RISC_V.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/RISC_V.sv
 L0 3
-R5
+R4
 r1
 !s85 0
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 vtb_top
 R0
-R1
+R13
 !i10b 1
 !s100 QYECKdlBlCB_PRK]EK=CG1
 IiKSfzg:Tj?mLdnUGfCB]82
@@ -414,18 +414,18 @@ w1552641442
 8/users/ugrad/2017/summer/yukih1/112L/project/newLab4/verif/tb_top.sv
 F/users/ugrad/2017/summer/yukih1/112L/project/newLab4/verif/tb_top.sv
 L0 3
-R5
+R4
 r1
 !s85 0
 31
-R6
+!s108 1552877145.000000
 !s107 /users/ugrad/2017/summer/yukih1/112L/project/newLab4/verif/tb_top.sv|
 !s90 -quiet|-64|-sv|-f|/users/ugrad/2017/summer/yukih1/112L/project/newLab4/verif/tb.cfg|-work|work|
 !i113 0
 o-quiet -sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 Ttb_top_opt
-!s110 1552646315
-V?5eQ9SEG20?_5aZ24L[d;3
+R13
+VfY[MS@HoA]c9R11IWd46G1
 04 6 4 work tb_top fast 0
 o-quiet +acc -work work
 ntb_top_opt

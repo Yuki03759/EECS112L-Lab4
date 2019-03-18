@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version J-2014.09-SP4 for amd64 -- Mar 04, 2015
-#@ # Date:   Fri Mar  1 03:01:56 2019
+#@ # Date:   Sun Mar 17 19:26:39 2019
 #@ # Run by: yukih1@zuma.eecs.uci.edu
 #@ 
 
@@ -3756,8 +3756,8 @@ source /ecelib/linware/synopsys15/dc/admin/setup/.synopsys_dc.setup
 #@ 
 #@ # -- End source /ecelib/linware/synopsys15/dc/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose /users/ugrad/2017/summer/yukih1/112L/project/EECS112L_Lab3/Lab_Files/syn/synth.tcl
-#@ # -- Starting source /users/ugrad/2017/summer/yukih1/112L/project/EECS112L_Lab3/Lab_Files/syn/synth.tcl
+source -echo -verbose /users/ugrad/2017/summer/yukih1/112L/project/newLab4/syn/synth.tcl
+#@ # -- Starting source /users/ugrad/2017/summer/yukih1/112L/project/newLab4/syn/synth.tcl
 
 #@ 
 #@ #==============================================================================
@@ -3772,7 +3772,7 @@ source -echo -verbose /users/ugrad/2017/summer/yukih1/112L/project/EECS112L_Lab3
 #@ #set TOP                         "Datapath"
 #@ #set TOP                         "Controller"
 #@ set FILES                       "files_riscv"
-#@ set clock_period                10
+#@ set clock_period                2
 #@ 
 #@ #==============================================================================
 #@ #                  D I R E C T O R Y   S T R U C T U R E
@@ -3845,7 +3845,8 @@ source -echo -verbose /users/ugrad/2017/summer/yukih1/112L/project/EECS112L_Lab3
 #@ source scripts/${FILES}.tcl -v -e  > ${LOG}/files_${TOP}.log
 #@ # -- Starting source scripts/files_riscv.tcl
 
-#@ analyze -format sverilog {   adder.sv   flopr.sv   imm_Gen.sv   mux2.sv   datamemory.sv   instructionmemory.sv   ALUController.sv   alu.sv   RegFile.sv   Controller.sv   Datapath.sv   RISC_V.sv }
+#@ analyze -format sverilog {   adder.sv   flopr.sv   imm_Gen.sv   mux2.sv   datamemory.sv   instructionmemory.sv   ALUController.sv   alu.sv   RegFile.sv   Controller.sv   Datapath.sv   RISC_V.sv   branch_flag.sv   hazard_Detection_Unit.sv   forwarding_Unit.sv   mux3.sv
+#@ }
 #@ # -- End source scripts/files_riscv.tcl
 
 #@ 
@@ -3942,5 +3943,6 @@ source -echo -verbose /users/ugrad/2017/summer/yukih1/112L/project/EECS112L_Lab3
 #@ 
 #@ #exit
 #@ 
-#@ # -- End source /users/ugrad/2017/summer/yukih1/112L/project/EECS112L_Lab3/Lab_Files/syn/synth.tcl
+#@ # -- End source /users/ugrad/2017/summer/yukih1/112L/project/newLab4/syn/synth.tcl
 
+exit

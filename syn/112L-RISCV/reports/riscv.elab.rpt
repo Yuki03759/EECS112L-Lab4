@@ -12,20 +12,56 @@ Presto compilation completed successfully.
 Information: Building the design 'ALUController'. (HDL-193)
 Presto compilation completed successfully.
 Information: Building the design 'Datapath'. (HDL-193)
-Presto compilation completed successfully.
-Information: Building the design 'adder' instantiated from design 'Datapath' with
-	the parameters "32". (HDL-193)
-Presto compilation completed successfully.
-Information: Building the design 'flopr' instantiated from design 'Datapath' with
-	the parameters "32". (HDL-193)
 
 Inferred memory devices in process
-	in routine flopr_WIDTH32 line 29 in file
-		'/users/ugrad/2017/summer/yukih1/112L/project/EECS112L_Lab3/Lab_Files/design/flopr.sv'.
+	in routine Datapath line 70 in file
+		'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Datapath.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|        q_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      if_id_reg      | Flip-flop |  50   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine Datapath line 86 in file
+		'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Datapath.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      id_ex_reg      | Flip-flop |  146  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine Datapath line 141 in file
+		'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Datapath.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     ex_mem_reg      | Flip-flop |  86   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine Datapath line 173 in file
+		'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Datapath.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     mem_wb_reg      | Flip-flop |  81   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'adder' instantiated from design 'Datapath' with
+	the parameters "9". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'flopr' instantiated from design 'Datapath' with
+	the parameters "9". (HDL-193)
+
+Inferred memory devices in process
+	in routine flopr_WIDTH9 line 29 in file
+		'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/flopr.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        q_reg        | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully.
 Information: Building the design 'instructionmemory'. (HDL-193)
@@ -33,16 +69,16 @@ Statistics for MUX_OPs
 ===============================================================
 |   block name/line    | Inputs | Outputs | # sel inputs | MB |
 ===============================================================
-| instructionmemory/37 | 16384  |    1    |      14      | N  |
+| instructionmemory/37 |  128   |    1    |      7       | N  |
 ===============================================================
 Presto compilation completed successfully.
-Error: Width mismatch on port 'ra' of reference to 'instructionmemory' in 'Datapath'. (LINK-3)
-Error: Width mismatch on port 'rd' of reference to 'instructionmemory' in 'Datapath'. (LINK-3)
+Information: Building the design 'hazard_Detection_Unit'. (HDL-193)
+Presto compilation completed successfully.
 Information: Building the design 'RegFile'. (HDL-193)
 
 Inferred memory devices in process
 	in routine RegFile line 36 in file
-		'/users/ugrad/2017/summer/yukih1/112L/project/EECS112L_Lab3/Lab_Files/design/RegFile.sv'.
+		'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/RegFile.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -87,25 +123,26 @@ Statistics for MUX_OPs
 |    RegFile/47    |   32   |   32    |      5       | N  |
 ===========================================================
 Presto compilation completed successfully.
-Information: Building the design 'mux2' instantiated from design 'Datapath' with
-	the parameters "32". (HDL-193)
-Presto compilation completed successfully.
 Information: Building the design 'imm_Gen'. (HDL-193)
 
 Statistics for case statements in always block at line 28 in file
-	'/users/ugrad/2017/summer/yukih1/112L/project/EECS112L_Lab3/Lab_Files/design/imm_Gen.sv'
+	'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/imm_Gen.sv'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
 |            29            |    auto/auto     |
 ===============================================
 Presto compilation completed successfully.
+Information: Building the design 'mux2' instantiated from design 'Datapath' with
+	the parameters "32". (HDL-193)
+Presto compilation completed successfully.
 Information: Building the design 'alu'. (HDL-193)
-Warning:  /users/ugrad/2017/summer/yukih1/112L/project/EECS112L_Lab3/Lab_Files/design/alu.sv:43: signed to unsigned assignment occurs. (VER-318)
-Warning:  /users/ugrad/2017/summer/yukih1/112L/project/EECS112L_Lab3/Lab_Files/design/alu.sv:55: signed to unsigned assignment occurs. (VER-318)
+Warning:  /users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/alu.sv:43: signed to unsigned assignment occurs. (VER-318)
+Warning:  /users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/alu.sv:55: signed to unsigned assignment occurs. (VER-318)
+Warning:  /users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/alu.sv:63: signed to unsigned assignment occurs. (VER-318)
 
 Statistics for case statements in always block at line 34 in file
-	'/users/ugrad/2017/summer/yukih1/112L/project/EECS112L_Lab3/Lab_Files/design/alu.sv'
+	'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/alu.sv'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -113,8 +150,23 @@ Statistics for case statements in always block at line 34 in file
 ===============================================
 Presto compilation completed successfully.
 Information: Building the design 'branch_flag'. (HDL-193)
-Warning: Cannot find the design 'branch_flag' in the library 'WORK'. (LBR-1)
+
+Statistics for case statements in always block at line 12 in file
+	'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/branch_flag.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            16            |     no/auto      |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'adder' instantiated from design 'Datapath' with
+	the parameters "32". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mux3' instantiated from design 'Datapath' with
+	the parameters "32". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'forwarding_Unit'. (HDL-193)
+Presto compilation completed successfully.
 Information: Building the design 'datamemory'. (HDL-193)
 Presto compilation completed successfully.
-Warning: Design 'riscv' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
 1

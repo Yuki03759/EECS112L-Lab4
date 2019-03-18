@@ -11,7 +11,7 @@ set TOP                         "riscv"
 #set TOP                         "Datapath"
 #set TOP                         "Controller"
 set FILES                       "files_riscv"
-set clock_period                10
+set clock_period                2
 
 #==============================================================================
 #                  D I R E C T O R Y   S T R U C T U R E

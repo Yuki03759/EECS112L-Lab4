@@ -10,7 +10,7 @@ Report : power
         -verbose
 Design : riscv
 Version: J-2014.09-SP4
-Date   : Fri Mar  1 03:02:44 2019
+Date   : Sun Mar 17 19:29:24 2019
 ****************************************
 
 
@@ -18,6 +18,7 @@ Library(s) Used:
 
     saed32lvt_tt1p05vn40c (File: /users/ugrad2/2012/spring/pooriam/libraries/saed32lvt_tt1p05vn40c.db)
     saed32sram_tt1p05vn40c (File: /users/ugrad2/2012/spring/pooriam/libraries/saed32sram_tt1p05vn40c.db)
+    gtech (File: /ecelib/linware/synopsys15/dc/libraries/syn/gtech.db)
 
 
 Operating Conditions: tt1p05vn40c   Library: saed32lvt_tt1p05vn40c
@@ -25,19 +26,10 @@ Wire Load Model Mode: enclosed
 
 Design        Wire Load Model            Library
 ------------------------------------------------
-riscv                  70000             saed32lvt_tt1p05vn40c
-Datapath               70000             saed32lvt_tt1p05vn40c
-adder_WIDTH32_0        ForQA             saed32lvt_tt1p05vn40c
-flopr_WIDTH32          8000              saed32lvt_tt1p05vn40c
+riscv                  ForQA             saed32lvt_tt1p05vn40c
+Datapath               ForQA             saed32lvt_tt1p05vn40c
+instructionmemory      ForQA             saed32lvt_tt1p05vn40c
 RegFile                16000             saed32lvt_tt1p05vn40c
-mux2_WIDTH32_0         ForQA             saed32lvt_tt1p05vn40c
-imm_Gen                ForQA             saed32lvt_tt1p05vn40c
-alu                    8000              saed32lvt_tt1p05vn40c
-datamemory             70000             saed32lvt_tt1p05vn40c
-mux2_WIDTH32_1         ForQA             saed32lvt_tt1p05vn40c
-mux2_WIDTH32_2         ForQA             saed32lvt_tt1p05vn40c
-adder_WIDTH32_1        ForQA             saed32lvt_tt1p05vn40c
-adder_WIDTH32_2        ForQA             saed32lvt_tt1p05vn40c
 
 
 Global Operating Voltage = 1.05 
@@ -53,17 +45,9 @@ Power-specific unit information :
                                        Switch   Int      Leak     Total
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
-riscv                                    30.322  737.353 1.28e+10 1.35e+04 100.0
-  dp (Datapath)                          30.406  737.087 1.28e+10 1.35e+04  99.8
-    data_mem (datamemory)                 0.109   27.613 1.48e+04   27.737   0.2
-    brmuxPlus4 (adder_WIDTH32_1)            N/A    0.849 1.04e+08  103.525   0.8
-    brmux (mux2_WIDTH32_1)                0.396    0.753 5.75e+07   58.653   0.4
-    bradder (adder_WIDTH32_2)               N/A    1.234 9.38e+07   94.644   0.7
-    alu_module (alu)                      7.040   21.606 1.21e+09 1.24e+03   9.2
-    srcbmux (mux2_WIDTH32_2)              1.675    0.537 1.99e+07   22.097   0.2
-    Ext_Imm (imm_Gen)                     1.010    0.285 4.09e+07   42.222   0.3
-    umux (mux2_WIDTH32_0)                 2.062    0.502 3.67e+07   39.286   0.3
-    rf (RegFile)                         14.265  660.229 1.07e+10 1.14e+04  84.0
-    pcreg (flopr_WIDTH32)                 1.236   18.643 2.68e+08  287.467   2.1
-    pcadd (adder_WIDTH32_0)                 N/A    1.001 9.09e+07   91.568   0.7
+riscv                                    47.579 5.11e+03 1.56e+10 2.08e+04 100.0
+  dp (Datapath)                          46.899 5.11e+03 1.56e+10 2.07e+04  99.8
+    rf (RegFile)                         20.652 3.28e+03 1.04e+10 1.37e+04  66.0
+    instr_mem (instructionmemory)         1.274    0.000    0.000    1.274   0.0
+      C37 (*MUX_OP_128_7_1)               0.554    0.000    0.000    0.554   0.0
 1

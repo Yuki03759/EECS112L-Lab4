@@ -1,10 +1,9 @@
-Warning: Design 'riscv' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : design
 Design : riscv
 Version: J-2014.09-SP4
-Date   : Fri Mar  1 03:02:43 2019
+Date   : Sun Mar 17 19:29:21 2019
 ****************************************
 
 Design allows ideal nets on clock nets.
@@ -13,6 +12,7 @@ Library(s) Used:
 
     saed32lvt_tt1p05vn40c (File: /users/ugrad2/2012/spring/pooriam/libraries/saed32lvt_tt1p05vn40c.db)
     saed32sram_tt1p05vn40c (File: /users/ugrad2/2012/spring/pooriam/libraries/saed32sram_tt1p05vn40c.db)
+    gtech (File: /ecelib/linware/synopsys15/dc/libraries/syn/gtech.db)
 
 Local Link Library:
 
@@ -38,36 +38,36 @@ Operating Conditions:
 
 Wire Loading Model:
 
-    Selected automatically from the total cell area.
+    Selected from the default (area not fully known).
 
-Name           :   70000
+Name           :   ForQA
 Location       :   saed32lvt_tt1p05vn40c
-Resistance     :   0.01
-Capacitance    :   0.000143
+Resistance     :   0.002067
+Capacitance    :   0.026724
 Area           :   0.01
-Slope          :   170.996
+Slope          :   30.2854
 Fanout   Length   Points Average Cap Std Deviation
 --------------------------------------------------------------
-     1    18.44
-     2    42.77
-     3    70.64
-     4   102.58
-     5   139.15
-     6   180.88
-     7   228.32
-     8   282.00
-     9   342.48
-    10   410.29
-    11   485.98
-    12   570.09
-    13   663.16
-    14   765.74
-    15   878.36
-    16  1001.57
-    17  1135.91
-    18  1281.93
-    19  1440.17
-    20  1611.17
+     1     8.28
+     2    18.49
+     3    29.35
+     4    40.92
+     5    53.23
+     6    66.36
+     7    80.36
+     8    95.27
+     9   111.17
+    10   128.09
+    11   146.10
+    12   165.26
+    13   185.61
+    14   207.22
+    15   230.13
+    16   254.41
+    17   280.11
+    18   307.28
+    19   335.98
+    20   366.27
 
 
 
@@ -97,5 +97,5 @@ Design Parameters:
 
     None specified.
 
-Information: This design contains black box (unknown) components. (RPT-8)
+Information: This design contains unmapped logic. (RPT-7)
 1

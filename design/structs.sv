@@ -1,7 +1,7 @@
 typedef struct packed {
 
-    logic [31:0] pc; //why this pc has 9 bit
-    logic [31:0] pcplus4;
+    logic [8:0] pc; //why this pc has 9 bit
+    logic [8:0] pcplus4;
     logic [31:0] instr;
 }if_id_t;
 
@@ -31,8 +31,8 @@ typedef struct packed {
     logic [31:0] ext_imm; 
     
     //Not sure
-    logic [31:0] pc;
-    logic [31:0] pcplus4;
+    logic [8:0] pc;
+    logic [8:0] pcplus4;
 
 }id_ex_t;
 
@@ -49,7 +49,7 @@ typedef struct packed {
     logic [31:0] aluresult;
     logic [31:0] readdata2;
     logic [2:0] funct3;
-    logic [31:0] pcplus4;
+    logic [8:0] pcplus4;
     
 }ex_mem_t;
 
@@ -62,7 +62,7 @@ typedef struct packed {
     //output
     logic [4:0] regwriteaddress;
     logic [31:0] aluresult;
-    logic [31:0] pcplus4;
+    logic [8:0] pcplus4;
     logic [31:0] readdata;
 
 

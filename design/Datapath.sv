@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module Datapath #(
-    parameter PC_W = 32, // Program Counter
+    parameter PC_W = 9, // Program Counter
     parameter INS_W = 32, // Instruction Width
     parameter RF_ADDRESS = 5, // Register File Address
     parameter DATA_W = 32, // Data WriteData
@@ -43,7 +43,7 @@ module Datapath #(
 
 `include "structs.sv"
 
-logic [PC_W-1:0] PC, PCPlus4;
+logic [PC_W-1:0] PC, PCPlus4, newPC;
 logic [INS_W-1:0] Instr;
 logic [DATA_W-1:0] Result;
 logic [DATA_W-1:0] Reg1, Reg2, SrcA;
@@ -68,7 +68,7 @@ mem_wb_t mem_wb;
 
 //if_id
 always @(posedge clk) begin
-    if(reset)
+    if(reset || {bmux || id_ex.jumpmux ,  id_ex.jumprmux} != 2'b00)
         begin
             if_id.pc        <= 0;
             if_id.pcplus4   <= 0;
@@ -84,7 +84,7 @@ end
 
 //id_ex
 always @(posedge clk) begin
-    if(reset || stall)
+    if(reset || stall || {bmux || id_ex.jumpmux ,  id_ex.jumprmux} != 2'b00)
         begin
             id_ex.alusrc        <= 0;
             id_ex.memtoreg      <= 0;  
@@ -198,8 +198,9 @@ end
 // ------------------------------------------//
 
 
-    adder #(32) pcadd (PC, 32'b100, PCPlus4);
-    flopr #(32) pcreg(clk, reset, stall, jmuxresult, PC);
+    adder #(9) pcadd (PC, 9'b100, PCPlus4);
+    flopr #(9) pcreg(clk, reset, newPC, PC);
+    mux2 #(9) pcmux( jmuxresult[8:0] , PC , stall, newPC); 
     instructionmemory instr_mem (PC, Instr);
     
 // ------------- IF_ID -----------------------------------    
@@ -215,16 +216,16 @@ end
     
     imm_Gen Ext_Imm (if_id.instr, ExtImm);
 
-// ------------- IF_ID -----------------------------------    
+// ------------- ID_Ex -----------------------------------    
 
-    mux2 #(32) umux(id_ex.readdata1, id_ex.pc, id_ex.umux, SrcA_toForwardMux);
+    mux2 #(32) umux(id_ex.readdata1, {23'b0, id_ex.pc}, id_ex.umux, SrcA_toForwardMux);
     mux2 #(32) srcbmux(id_ex.readdata2, id_ex.ext_imm, id_ex.alusrc, SrcB_toForwardMux);
     alu alu_module(SrcA, SrcB, id_ex.alu_cc, ALUResult);
     
     branch_flag bf(id_ex.funct3, SrcA, SrcB, id_ex.branch , bmux);
-    adder #(32) bradder(id_ex.pc , id_ex.ext_imm, PCPlusImm);
+    adder #(32) bradder( {23'b0, id_ex.pc}, id_ex.ext_imm, PCPlusImm);
     adder #(32) brmuxPlusImm(.a(id_ex.ext_imm), .b(SrcA), .y(srcAPlusImm));
-    mux3 #(32) jumpmux ( id_ex.pcplus4, srcAPlusImm, PCPlusImm, {bmux || id_ex.jumpmux ,  id_ex.jumprmux}, jmuxresult);
+    mux3 #(32) jumpmux ( {23'b0, PCPlus4}, srcAPlusImm, PCPlusImm, {bmux || id_ex.jumpmux ,  id_ex.jumprmux}, jmuxresult);
     
     mux3 #(32) forwardA_Mux( SrcA_toForwardMux, Result, ex_mem.aluresult, ForwardA, SrcA);
     mux3 #(32) forwardB_Mux( SrcB_toForwardMux, Result, ex_mem.aluresult, ForwardB, SrcB);
@@ -237,5 +238,5 @@ end
 	datamemory data_mem (clk, ex_mem.memread, ex_mem.memwrite, ex_mem.aluresult[DM_ADDRESS-1:0], ex_mem.readdata2, ex_mem.funct3 , ReadData);
 
 // --------- MEM_WB -----------------------------------    
-    mux3 #(32) resmux(mem_wb.aluresult, mem_wb.pcplus4 , mem_wb.readdata, mem_wb.memtoreg, Result); 
+    mux3 #(32) resmux(mem_wb.aluresult, {23'b0, mem_wb.pcplus4} , mem_wb.readdata, mem_wb.memtoreg, Result); 
 endmodule
