@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version J-2014.09-SP4 for amd64 -- Mar 04, 2015
-#@ # Date:   Sun Mar 17 19:26:39 2019
+#@ # Date:   Wed Mar 20 14:14:44 2019
 #@ # Run by: yukih1@zuma.eecs.uci.edu
 #@ 
 
@@ -3756,8 +3756,8 @@ source /ecelib/linware/synopsys15/dc/admin/setup/.synopsys_dc.setup
 #@ 
 #@ # -- End source /ecelib/linware/synopsys15/dc/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose /users/ugrad/2017/summer/yukih1/112L/project/newLab4/syn/synth.tcl
-#@ # -- Starting source /users/ugrad/2017/summer/yukih1/112L/project/newLab4/syn/synth.tcl
+source -echo -verbose /users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/syn/synth.tcl
+#@ # -- Starting source /users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/syn/synth.tcl
 
 #@ 
 #@ #==============================================================================
@@ -3943,6 +3943,6 @@ source -echo -verbose /users/ugrad/2017/summer/yukih1/112L/project/newLab4/syn/s
 #@ 
 #@ #exit
 #@ 
-#@ # -- End source /users/ugrad/2017/summer/yukih1/112L/project/newLab4/syn/synth.tcl
+#@ # -- End source /users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/syn/synth.tcl
 
 exit

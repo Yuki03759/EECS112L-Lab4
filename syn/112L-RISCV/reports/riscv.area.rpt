@@ -4,7 +4,7 @@ Warning: duplicate option '-nosplit' overrides previous value. (CMD-018)
 Report : area
 Design : riscv
 Version: J-2014.09-SP4
-Date   : Sun Mar 17 19:29:21 2019
+Date   : Wed Mar 20 14:18:04 2019
 ****************************************
 
 Library(s) Used:
@@ -22,14 +22,14 @@ Number of macros/black boxes:               0
 Number of buf/inv:                         14
 Number of references:                      16
 
-Combinational area:              11117.021012
-Buf/Inv area:                      465.337663
-Noncombinational area:            9306.753531
+Combinational area:              11121.087326
+Buf/Inv area:                      393.414917
+Noncombinational area:            9258.466195
 Macro/Black Box area:            50667.683594
-Net Interconnect area:            6077.303462
+Net Interconnect area:            6070.040387
 
-Total cell area:                 71091.458136
-Total area:                      77168.761598
+Total cell area:                 71047.237115
+Total area:                      77117.277502
 
 Information: This design contains unmapped logic. (RPT-7)
 
@@ -43,12 +43,12 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
                                   Total       Total    national    national   boxes       Design
 --------------------------------  ----------  -------  ----------  ---------  ----------  -----------------
-riscv                             71091.4581    100.0     98.0996     0.0000      0.0000  riscv
-dp                                70993.3586     99.9   4294.7795  2540.4235  50667.6836  Datapath
+riscv                             71047.2371    100.0     98.0996     0.0000      0.0000  riscv
+dp                                70949.1375     99.9   4326.2933  2492.1361  50667.6836  Datapath
 dp/instr_mem                          0.0000      0.0      0.0000     0.0000      0.0000  instructionmemory
-dp/rf                             13490.4720     19.0   6724.1420  6766.3301      0.0000  RegFile
+dp/rf                             13463.0245     18.9   6696.6944  6766.3301      0.0000  RegFile
 --------------------------------  ----------  -------  ----------  ---------  ----------  -----------------
-Total                                                  11117.0210  9306.7535  50667.6836
+Total                                                  11121.0873  9258.4662  50667.6836
 
 
 Area of detected synthetic parts
@@ -60,17 +60,17 @@ Estimated area of ungrouped synthetic parts
                                       Estimated  Perc. of
   Module              Implem.  Count       Area cell area
   ------------------- -------  ----- ---------- ---------
-  DP_OP_88J2_122_1922     str      1   320.8484      0.5%
-  DP_OP_91J2_125_6895     str      1    41.7508      0.1%
+  DP_OP_90J2_122_6004     str      1   308.6995      0.4%
+  DP_OP_93J2_125_5120     str      1    41.7846      0.1%
   DW01_add            apparch      1    21.0940      0.0%
-  DW_cmp              apparch     12   918.1232      1.3%
+  DW_cmp              apparch     12   918.8281      1.3%
   DW_leftsh              astr      1   536.7517      0.8%
   DW_rightsh             astr      3  1430.3231      2.0%
   ------------------- -------  ----- ---------- ---------
-  DP_OP Subtotal:                  2   362.5992      0.5%
-  Total:                          19  3268.8911      4.6%
+  DP_OP Subtotal:                  2   350.4841      0.5%
+  Total:                          19  3257.4809      4.6%
 
-Subtotal of datapath(DP_OP) cell area:  362.5992  0.5%  (estimated)
-Total synthetic cell area:              3268.8911  4.6%  (estimated)
+Subtotal of datapath(DP_OP) cell area:  350.4841  0.5%  (estimated)
+Total synthetic cell area:              3257.4809  4.6%  (estimated)
 
 1

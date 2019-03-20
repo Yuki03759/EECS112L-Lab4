@@ -15,7 +15,7 @@ Information: Building the design 'Datapath'. (HDL-193)
 
 Inferred memory devices in process
 	in routine Datapath line 70 in file
-		'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Datapath.sv'.
+		'/users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/design/Datapath.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -24,7 +24,7 @@ Inferred memory devices in process
 
 Inferred memory devices in process
 	in routine Datapath line 86 in file
-		'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Datapath.sv'.
+		'/users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/design/Datapath.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -33,7 +33,7 @@ Inferred memory devices in process
 
 Inferred memory devices in process
 	in routine Datapath line 141 in file
-		'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Datapath.sv'.
+		'/users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/design/Datapath.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -42,7 +42,7 @@ Inferred memory devices in process
 
 Inferred memory devices in process
 	in routine Datapath line 173 in file
-		'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/Datapath.sv'.
+		'/users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/design/Datapath.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -57,12 +57,15 @@ Information: Building the design 'flopr' instantiated from design 'Datapath' wit
 
 Inferred memory devices in process
 	in routine flopr_WIDTH9 line 29 in file
-		'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/flopr.sv'.
+		'/users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/design/flopr.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
 |        q_reg        | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mux2' instantiated from design 'Datapath' with
+	the parameters "9". (HDL-193)
 Presto compilation completed successfully.
 Information: Building the design 'instructionmemory'. (HDL-193)
 Statistics for MUX_OPs
@@ -78,7 +81,7 @@ Information: Building the design 'RegFile'. (HDL-193)
 
 Inferred memory devices in process
 	in routine RegFile line 36 in file
-		'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/RegFile.sv'.
+		'/users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/design/RegFile.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -126,7 +129,7 @@ Presto compilation completed successfully.
 Information: Building the design 'imm_Gen'. (HDL-193)
 
 Statistics for case statements in always block at line 28 in file
-	'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/imm_Gen.sv'
+	'/users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/design/imm_Gen.sv'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -137,12 +140,12 @@ Information: Building the design 'mux2' instantiated from design 'Datapath' with
 	the parameters "32". (HDL-193)
 Presto compilation completed successfully.
 Information: Building the design 'alu'. (HDL-193)
-Warning:  /users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/alu.sv:43: signed to unsigned assignment occurs. (VER-318)
-Warning:  /users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/alu.sv:55: signed to unsigned assignment occurs. (VER-318)
-Warning:  /users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/alu.sv:63: signed to unsigned assignment occurs. (VER-318)
+Warning:  /users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/design/alu.sv:43: signed to unsigned assignment occurs. (VER-318)
+Warning:  /users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/design/alu.sv:55: signed to unsigned assignment occurs. (VER-318)
+Warning:  /users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/design/alu.sv:63: signed to unsigned assignment occurs. (VER-318)
 
 Statistics for case statements in always block at line 34 in file
-	'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/alu.sv'
+	'/users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/design/alu.sv'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -152,7 +155,7 @@ Presto compilation completed successfully.
 Information: Building the design 'branch_flag'. (HDL-193)
 
 Statistics for case statements in always block at line 12 in file
-	'/users/ugrad/2017/summer/yukih1/112L/project/newLab4/design/branch_flag.sv'
+	'/users/ugrad/2017/summer/yukih1/112L/project/workingTest/EECS112L_Lab4/design/branch_flag.sv'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================

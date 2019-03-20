@@ -7,13 +7,13 @@ Warning: Design 'riscv' contains 1 high-fanout nets. A fanout number of 1000 wil
 Report : qor
 Design : riscv
 Version: J-2014.09-SP4
-Date   : Sun Mar 17 19:29:21 2019
+Date   : Wed Mar 20 14:18:04 2019
 ****************************************
 
 
   Timing Path Group 'clk'
   -----------------------------------
-  Levels of Logic:              40.00
+  Levels of Logic:              39.00
   Critical Path Length:          1.99
   Critical Path Slack:           0.00
   Critical Path Clk Period:      2.00
@@ -29,12 +29,12 @@ Date   : Sun Mar 17 19:29:21 2019
   -----------------------------------
   Hierarchical Cell Count:          3
   Hierarchical Port Count:        220
-  Leaf Cell Count:               5918
-  Buf/Inv Cell Count:             319
-  Buf Cell Count:                  63
-  Inv Cell Count:                 256
+  Leaf Cell Count:               5905
+  Buf/Inv Cell Count:             287
+  Buf Cell Count:                  68
+  Inv Cell Count:                 219
   CT Buf/Inv Cell Count:            0
-  Combinational Cell Count:      4525
+  Combinational Cell Count:      4512
   Sequential Cell Count:         1393
   Macro Count:                      0
   -----------------------------------
@@ -42,24 +42,24 @@ Date   : Sun Mar 17 19:29:21 2019
 
   Area
   -----------------------------------
-  Combinational Area:    11117.021012
-  Noncombinational Area:  9306.753531
-  Buf/Inv Area:            465.337663
-  Total Buffer Area:            67.60
-  Total Inverter Area:         397.74
+  Combinational Area:    11121.087326
+  Noncombinational Area:  9258.466195
+  Buf/Inv Area:            393.414917
+  Total Buffer Area:            77.77
+  Total Inverter Area:         315.65
   Macro/Black Box Area:  50667.683594
-  Net Area:               6077.303462
+  Net Area:               6070.040387
   -----------------------------------
-  Cell Area:             71091.458136
-  Design Area:           77168.761598
+  Cell Area:             71047.237115
+  Design Area:           77117.277502
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:          6190
+  Total Number of Nets:          6066
   Nets With Violations:             1
-  Max Trans Violations:             0
-  Max Cap Violations:               1
+  Max Trans Violations:             1
+  Max Cap Violations:               0
   -----------------------------------
 
 
@@ -67,12 +67,12 @@ Date   : Sun Mar 17 19:29:21 2019
 
   Compile CPU Statistics
   -----------------------------------------
-  Resource Sharing:                    4.43
-  Logic Optimization:                  9.85
-  Mapping Optimization:               35.63
+  Resource Sharing:                    4.52
+  Logic Optimization:                  9.40
+  Mapping Optimization:               26.15
   -----------------------------------------
-  Overall Compile Time:               86.08
-  Overall Compile Wall Clock Time:   152.74
+  Overall Compile Time:               79.82
+  Overall Compile Wall Clock Time:   186.19
 
   --------------------------------------------------------------------
 
